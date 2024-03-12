@@ -3,5 +3,5 @@ Repo for the Le Wagon Data Engineering bootcamp final project
 
 # MVP Features
 
-# Architecture sketch
 
+# Architecture sketch
