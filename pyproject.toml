@@ -2,7 +2,7 @@
 name = "us-weather-alerts"
 version = "0.1.0"
 description = "Le Wagon Data Engineering bootcamp final project"
-authors = ["Malte Berneaud <malte.berneaud@gmail.com>"]
+authors = ["Malte Berneaud <malte.berneaud@gmail.com>", "Janine Windhoff <janine.windhoff@gmail.com>", "Mouad Rabih Senhaji <mouadrs2846@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
