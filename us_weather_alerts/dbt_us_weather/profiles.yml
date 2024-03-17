@@ -4,7 +4,7 @@ dbt_us_weather:
       dataset: dataSetName
       job_execution_timeout_seconds: 300
       job_retries: 1
-      keyfile: /path/to/bigquery/keyfile.json
+      keyfile: /app/airflow/.gcp_keys/us_weather_alerts.json
       location: EU
       method: service-account
       priority: interactive
