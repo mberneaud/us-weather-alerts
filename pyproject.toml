@@ -7,7 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-
+apache-airflow = ">=2.8.3"
+dbt-core = "^1.1.1"
+dbt-bigquery = "^1.1.0"
 
 [build-system]
 requires = ["poetry-core"]
