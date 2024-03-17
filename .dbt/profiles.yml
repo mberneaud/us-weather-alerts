@@ -1,0 +1,14 @@
+dbt_us_weather:
+  outputs:
+    dev:
+      dataset: dataSetName
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /path/to/bigquery/keyfile.json
+      location: EU
+      method: service-account
+      priority: interactive
+      project: projectId
+      threads: 1
+      type: bigquery
+  target: dev
