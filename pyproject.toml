@@ -6,7 +6,7 @@ authors = ["Malte Berneaud <malte.berneaud@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.8,<3.12"
 apache-airflow = ">=2.8.3"
 dbt-core = "^1.1.1"
 dbt-bigquery = "^1.1.0"
