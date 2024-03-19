@@ -31,7 +31,7 @@ services:
             - ./data:/app/airflow/data
             - ./logs:/app/airflow/logs
             - ~/.gcp_keys:/app/airflow/.gcp_keys
-            - ./dbt_us_weather:/app/airflow/us_weather_alerts/dbt_us_weather
+            - ./dbt_us_weather:/app/airflow/dbt_us_weather
     webserver:
         build: .
         command: poetry run scripts/entrypoint.sh
