@@ -43,9 +43,11 @@ def scrape_alerts(start_datetime: LiteralString, end_datetime: LiteralString, st
 
     return features
 
-def parse_features(features: list)-> pd.DataFrame:
+def parse_features(features: list) -> pd.DataFrame:
+    pass
 
-
+def upload_to_gcp(dataframe: pd.DataFrame):
+    pass
 
 if __name__ == "__main__":
     # Creating request paramenters
