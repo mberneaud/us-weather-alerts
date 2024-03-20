@@ -1,0 +1,399 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0-KEEPALIVE-46523",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0-KEEPALIVE-46523",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0-KEEPALIVE-46523",
+                "areaDesc": "Montgomery",
+                "geocode": {
+                    "SAME": [
+                        "024031"
+                    ],
+                    "UGC": [
+                        "MDC031"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/county/MDC031"
+                ],
+                "references": [],
+                "sent": "2024-03-20T10:56:09+00:00",
+                "effective": "2024-03-20T10:56:09+00:00",
+                "onset": null,
+                "expires": "2024-03-20T11:06:09+00:00",
+                "ends": null,
+                "status": "Test",
+                "messageType": "Alert",
+                "category": "Met",
+                "severity": "Unknown",
+                "certainty": "Unknown",
+                "urgency": "Unknown",
+                "event": "Test Message",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS",
+                "headline": null,
+                "description": "Monitoring message only. Please disregard.",
+                "instruction": "Monitoring message only. Please disregard.",
+                "response": "None",
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "KEPWBC"
+                    ],
+                    "WMOidentifier": [
+                        "NZUS91 KWBC 201056"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "CMAS",
+                        "EAS",
+                        "NWEM"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ee150b5b26f3d9c7e5dbe21c47c32a22e63bc402.003.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ee150b5b26f3d9c7e5dbe21c47c32a22e63bc402.003.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.ee150b5b26f3d9c7e5dbe21c47c32a22e63bc402.003.1",
+                "areaDesc": "Point Piedras Blancas to Point Sal westward out to 10 NM",
+                "geocode": {
+                    "SAME": [
+                        "057645"
+                    ],
+                    "UGC": [
+                        "PZZ645"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/PZZ645"
+                ],
+                "references": [],
+                "sent": "2024-03-20T03:47:00-07:00",
+                "effective": "2024-03-20T03:47:00-07:00",
+                "onset": "2024-03-20T15:00:00-07:00",
+                "expires": "2024-03-20T12:00:00-07:00",
+                "ends": "2024-03-21T03:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Alert",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Small Craft Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Los Angeles/Oxnard CA",
+                "headline": "Small Craft Advisory issued March 20 at 3:47AM PDT until March 21 at 3:00AM PDT by NWS Los Angeles/Oxnard CA",
+                "description": "* WHAT...Hazardous wind and sea conditions.\n\n* WHERE...Point Piedras Blancas to Point Sal westward out to 10\nNM.\n\n* WHEN...From 3 PM this afternoon to 3 AM PDT Thursday.\n\n* IMPACTS...Conditions will be hazardous to small craft.\n\n* ADDITIONAL DETAILS...See the Coastal Waters Forecast (CWFLOX)\nfor more.",
+                "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+                "response": "Avoid",
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWLOX"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS76 KLOX 201047"
+                    ],
+                    "NWSheadline": [
+                        "SMALL CRAFT ADVISORY REMAINS IN EFFECT FROM 3 PM THIS AFTERNOON TO 3 AM PDT THURSDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.CON.KLOX.SC.Y.0039.240320T2200Z-240321T1000Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2024-03-21T10:00:00+00:00"
+                    ],
+                    "expiredReferences": [
+                        "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.4e01e3537369e12f5ba809e4d3f41806cfad4c74.002.1,2024-03-19T19:42:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.d8db56e30e0546c270b8b6675c950a93d5189d32.001.1,2024-03-19T08:23:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.712788a982b4f5c3c57dcba1bc1b3b9895c16ef7.001.1,2024-03-19T14:12:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.7824ae9d0c57b5322c151dd524b0e825356c0c5a.004.1,2024-03-19T02:34:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.d85c8c39c367538e4dda37aff7c40a9ff34b9651.001.2,2024-03-18T21:01:00-07:00"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cdce9ad8684c4c0ab821da68591f4b39e1451e7c.008.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cdce9ad8684c4c0ab821da68591f4b39e1451e7c.008.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.cdce9ad8684c4c0ab821da68591f4b39e1451e7c.008.1",
+                "areaDesc": "James River from James River Bridge to Hampton Roads Bridge-Tunnel",
+                "geocode": {
+                    "SAME": [
+                        "073638"
+                    ],
+                    "UGC": [
+                        "ANZ638"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/ANZ638"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.60db41fba02ddbf45f4c209feca38eb9af916bc8.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.60db41fba02ddbf45f4c209feca38eb9af916bc8.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2024-03-19T14:31:40-04:00"
+                    },
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.16e10620dfa875df3c77513fb41ed4aee8159d2c.005.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.16e10620dfa875df3c77513fb41ed4aee8159d2c.005.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2024-03-20T00:45:00-04:00"
+                    },
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.774bdc58b24e053b5f0e318413cb571e5b80cc17.006.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.774bdc58b24e053b5f0e318413cb571e5b80cc17.006.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2024-03-20T04:09:00-04:00"
+                    }
+                ],
+                "sent": "2024-03-20T06:47:00-04:00",
+                "effective": "2024-03-20T06:47:00-04:00",
+                "onset": "2024-03-20T06:47:00-04:00",
+                "expires": "2024-03-20T15:00:00-04:00",
+                "ends": "2024-03-21T10:00:00-04:00",
+                "status": "Actual",
+                "messageType": "Update",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Small Craft Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Wakefield VA",
+                "headline": "Small Craft Advisory issued March 20 at 6:47AM EDT until March 21 at 10:00AM EDT by NWS Wakefield VA",
+                "description": "* WHAT...West winds 15 to 20 kt with gusts up to 30 kt, becoming\nnorth tonight and waves 2 to 3 ft.\n\n* WHERE...James River from James River Bridge to Hampton Roads\nBridge-Tunnel.\n\n* WHEN...Until 10 AM EDT Thursday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+                "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+                "response": "Avoid",
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWAKQ"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS71 KAKQ 201047"
+                    ],
+                    "NWSheadline": [
+                        "SMALL CRAFT ADVISORY REMAINS IN EFFECT UNTIL 10 AM EDT THURSDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.CON.KAKQ.SC.Y.0037.000000T0000Z-240321T1400Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2024-03-21T14:00:00+00:00"
+                    ],
+                    "expiredReferences": [
+                        "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.1ef878a2addec6b1da820058783e59e2ed94c8da.004.1,2024-03-19T19:31:00-04:00"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cdce9ad8684c4c0ab821da68591f4b39e1451e7c.006.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cdce9ad8684c4c0ab821da68591f4b39e1451e7c.006.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.cdce9ad8684c4c0ab821da68591f4b39e1451e7c.006.1",
+                "areaDesc": "Rappahannock River from Urbanna to Windmill Point; York River; James River from Jamestown to the James River Bridge",
+                "geocode": {
+                    "SAME": [
+                        "073635",
+                        "073636",
+                        "073637"
+                    ],
+                    "UGC": [
+                        "ANZ635",
+                        "ANZ636",
+                        "ANZ637"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/ANZ635",
+                    "https://api.weather.gov/zones/forecast/ANZ636",
+                    "https://api.weather.gov/zones/forecast/ANZ637"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.60db41fba02ddbf45f4c209feca38eb9af916bc8.003.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.60db41fba02ddbf45f4c209feca38eb9af916bc8.003.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2024-03-19T14:31:40-04:00"
+                    },
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.16e10620dfa875df3c77513fb41ed4aee8159d2c.003.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.16e10620dfa875df3c77513fb41ed4aee8159d2c.003.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2024-03-20T00:45:00-04:00"
+                    },
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.774bdc58b24e053b5f0e318413cb571e5b80cc17.004.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.774bdc58b24e053b5f0e318413cb571e5b80cc17.004.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2024-03-20T04:09:00-04:00"
+                    }
+                ],
+                "sent": "2024-03-20T06:47:00-04:00",
+                "effective": "2024-03-20T06:47:00-04:00",
+                "onset": "2024-03-20T06:47:00-04:00",
+                "expires": "2024-03-20T15:00:00-04:00",
+                "ends": "2024-03-21T07:00:00-04:00",
+                "status": "Actual",
+                "messageType": "Update",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Small Craft Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Wakefield VA",
+                "headline": "Small Craft Advisory issued March 20 at 6:47AM EDT until March 21 at 7:00AM EDT by NWS Wakefield VA",
+                "description": "* WHAT...West winds 15 to 20 kt with gusts up to 30 kt, becoming\nnorth tonight and waves 1 to 3 ft.\n\n* WHERE...Rappahannock River from Urbanna to Windmill Point,\nYork River and James River from Jamestown to the James River\nBridge.\n\n* WHEN...Until 7 AM EDT Thursday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+                "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+                "response": "Avoid",
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWAKQ"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS71 KAKQ 201047"
+                    ],
+                    "NWSheadline": [
+                        "SMALL CRAFT ADVISORY REMAINS IN EFFECT UNTIL 7 AM EDT THURSDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.CON.KAKQ.SC.Y.0037.000000T0000Z-240321T1100Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2024-03-21T11:00:00+00:00"
+                    ],
+                    "expiredReferences": [
+                        "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.1ef878a2addec6b1da820058783e59e2ed94c8da.002.1,2024-03-19T19:31:00-04:00"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cdce9ad8684c4c0ab821da68591f4b39e1451e7c.007.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cdce9ad8684c4c0ab821da68591f4b39e1451e7c.007.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.cdce9ad8684c4c0ab821da68591f4b39e1451e7c.007.1",
+                "areaDesc": "Currituck Sound",
+                "geocode": {
+                    "SAME": [
+                        "073633"
+                    ],
+                    "UGC": [
+                        "ANZ633"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/ANZ633"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.60db41fba02ddbf45f4c209feca38eb9af916bc8.003.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.60db41fba02ddbf45f4c209feca38eb9af916bc8.003.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2024-03-19T14:31:40-04:00"
+                    },
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.16e10620dfa875df3c77513fb41ed4aee8159d2c.004.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.16e10620dfa875df3c77513fb41ed4aee8159d2c.004.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2024-03-20T00:45:00-04:00"
+                    },
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.774bdc58b24e053b5f0e318413cb571e5b80cc17.005.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.774bdc58b24e053b5f0e318413cb571e5b80cc17.005.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2024-03-20T04:09:00-04:00"
+                    }
+                ],
+                "sent": "2024-03-20T06:47:00-04:00",
+                "effective": "2024-03-20T06:47:00-04:00",
+                "onset": "2024-03-20T06:47:00-04:00",
+                "expires": "2024-03-20T15:00:00-04:00",
+                "ends": "2024-03-21T07:00:00-04:00",
+                "status": "Actual",
+                "messageType": "Update",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Small Craft Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Wakefield VA",
+                "headline": "Small Craft Advisory issued March 20 at 6:47AM EDT until March 21 at 7:00AM EDT by NWS Wakefield VA",
+                "description": "* WHAT...West winds 15 to 20 kt with gusts up to 25 kt, becoming\nnorth tonight and waves 1 to 2 ft.\n\n* WHERE...Currituck Sound.\n\n* WHEN...Until 7 AM EDT Thursday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+                "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+                "response": "Avoid",
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWAKQ"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS71 KAKQ 201047"
+                    ],
+                    "NWSheadline": [
+                        "SMALL CRAFT ADVISORY REMAINS IN EFFECT UNTIL 7 AM EDT THURSDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.CON.KAKQ.SC.Y.0037.000000T0000Z-240321T1100Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2024-03-21T11:00:00+00:00"
+                    ],
+                    "expiredReferences": [
+                        "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.1ef878a2addec6b1da820058783e59e2ed94c8da.003.1,2024-03-19T19:31:00-04:00"
+                    ]
+                }
+            }
+        }
+    ],
+    "title": "Watches, warnings, and advisories issued since Sun, Jan 1, 2023 12:00:01 AM +0000",
+    "updated": "2024-03-20T10:56:17+00:00",
+    "pagination": {
+        "next": "https://api.weather.gov/alerts?limit=5&start=2023-01-01T00:00:01Z&cursor=eyJ0IjoxNzEwOTMxNjIwLCJpIjoidXJuOm9pZDoyLjQ5LjAuMS44NDAuMC5jZGNlOWFkODY4NGM0YzBhYjgyMWRhNjg1OTFmNGIzOWUxNDUxZTdjLjAwNy4xIn0%3D"
+    }
+}
