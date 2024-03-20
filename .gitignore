@@ -152,11 +152,16 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-#airflow
+#airflow & dbt
 airflow.cfg
 airflow.db
 webserver_config.py
-database/
+database
+dbt_us_weather/logs/
+dbt_us_weather/target/
+logs/
+
+
 
 
 # PyCharm
