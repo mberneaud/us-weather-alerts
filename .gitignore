@@ -159,9 +159,7 @@ webserver_config.py
 database
 dbt_us_weather/logs/
 dbt_us_weather/target/
-logs
-
-
+/logs
 
 
 # PyCharm
