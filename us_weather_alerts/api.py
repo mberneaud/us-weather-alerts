@@ -6,27 +6,38 @@ Author: Malte Berneaud
 
 import pandas as pd
 import requests
+from google.oauth2 import service_account
+import pandas_gbq
+import os
 #TODO: make asynchronous
 from datetime import datetime, timezone
-from typing import List, Dict, LiteralString
+from typing import List, Dict
 
 
-def scrape_alerts(start_datetime: LiteralString, end_datetime: LiteralString, status: LiteralString, output_file:LiteralString, limit: int = 500) -> list:
-    """Scrapes alerts for the specified timeframe and status and saves them to an output CSV file
-    datetime format: "%Y-%m-%dT%H:%M:%SZ"
+def scrape_alerts(status: str, start_datetime: datetime, end_datetime: datetime = datetime.now(), limit: int = 500) -> List[Dict]:
+    """Scrapes alerts for the specified timeframe and status and returns a list of dictionaries, where each dictionary represents
+    an alert (called Feature in the API response)
+
+    datetime needs to be parsed as a datetime.datetime object.
     """
+    # Format for parsing datetime
+    dt_format = "%Y-%m-%dT%H:%M:%SZ"
+    start = start_datetime.astimezone(timezone.utc).strftime(dt_format)
+    end = end_datetime.astimezone(timezone.utc).strftime(dt_format)
+
     base_url = "https://api.weather.gov/alerts"
     params = {"limit": limit,
-          "start": start_datetime,
-          "end": end_datetime,
+          "start": start,
+          "end": end,
           "status": status}
 
     features = []
 
     response = requests.get(base_url, params=params).json()
     if response["features"] == []:
-        raise KeyError("No alerts found for the specified properties. Try a longer time span.")
-    features.append(response["features"])
+        raise KeyError("No alerts found for the specified parameters. Try a longer time span, a different status or changing other parameters.")
+
+    features.append(response["features"][0])
 
     while True:
         try:
@@ -36,26 +47,74 @@ def scrape_alerts(start_datetime: LiteralString, end_datetime: LiteralString, st
 
             # TODO: parse the response to keep only important data inside
 
-            features.append(response["features"])
+            features.append(response["features"][0])
         except:
             print("No further pagination URL found")
             break
 
     return features
 
-def parse_features(features: list) -> pd.DataFrame:
-    pass
+def parse_features(features: List[Dict]) -> pd.DataFrame:
+    """Takes the list of dictionaries returned from the scrape_api function and
+    parses only relevant features, which are then returned as a Pandas data frame"""
 
-def upload_to_gcp(dataframe: pd.DataFrame):
-    pass
+    out_list = []
+    for feature in features:
+        parsed_features = {
+            "id": feature["id"],
+            "area_description": feature["properties"]["areaDesc"],
+            "geocode": feature["properties"]["geocode"]["UGC"], # Universal Geographic Code, see https://forecast.weather.gov/glossary.php?letter=u
+            "type": feature["properties"]["messageType"],
+            "sent": feature["properties"]["sent"],
+            "effective": feature["properties"]["effective"],
+            "expires": feature["properties"]["expires"],
+            "status": feature["properties"]["status"],
+            "category": feature["properties"]["category"],
+            "severity": feature["properties"]["severity"],
+            "certainty": feature["properties"]["certainty"],
+            "urgency": feature["properties"]["urgency"],
+            "event": feature["properties"]["event"],
+            "sender_name": feature["properties"]["senderName"],
+            "headline": feature["properties"]["headline"],
+            "description": feature["properties"]["description"],
+            "instruction": feature["properties"]["instruction"],
+
+        }
+        out_list.append(parsed_features)
+
+    # converting list of dicts to dataframe and returning
+    df = pd.DataFrame(out_list)
+    df = df.astype(str)
+
+    return df
+
+
+def upload_to_gcp(dataframe: pd.DataFrame, project_id: str, table_id, keyfile_path: str) -> None:
+    """Uploads the dataframe to a Google Cloud Platform BigQuery table.
+
+    Set project_id to your Google Cloud Platform project ID.
+    project_id = "my-project
+    Set table_id to the full destination table ID (including the dataset ID).
+    table_id = 'my_dataset.my_table'
+
+    Credentials are read from a service account keyfile, which should be stored
+    in the same place as your Le Wagon Keyfile and referenced with it's absolute path.
+    Put the path to the keyfile in the .env file
+    """
+    credentials = service_account.Credentials.from_service_account_file(keyfile_path)
+
+    pandas_gbq.to_gbq(dataframe, table_id, project_id=project_id, if_exists="append", credentials=credentials)
 
 if __name__ == "__main__":
-    # Creating request paramenters
+    # API request parameters
     LIMIT = 500
-    dt_format = "%Y-%m-%dT%H:%M:%SZ"
-    start_datetime = datetime(2023, 1, 1, 1, 0, 0, 1).astimezone(timezone.utc).strftime(dt_format)
-    # end_datetime = datetime(2023, 1, 1, 5, 0, 0, 1).astimezone(timezone.utc).strftime(dt_format)
+    start_datetime = datetime(2023, 1, 1, 1, 0, 0, 1)
 
+    # GCP upload parameters
+    keyfile_path = os.environ["SERVICE_ACCOUNT_KEYFILE"]
+    gcp_project_id = os.environ["GCP_PROJECT_ID"]
+    table_id = f"{os.environ['BRONZE_DATASET']}.alerts"
 
-    end_datetime = datetime.now().astimezone(timezone.utc).strftime(dt_format)
-    scrape_alerts(start_datetime, end_datetime, "actual", "test.csv", LIMIT)
+    features = scrape_alerts(status="actual", start_datetime=start_datetime, limit=LIMIT)
+    df = parse_features(features)
+    upload_to_gcp(df, gcp_project_id, table_id, keyfile_path)
