@@ -78,6 +78,7 @@ def parse_features(features: List[Dict]) -> pd.DataFrame:
             "headline": feature["properties"]["headline"],
             "description": feature["properties"]["description"],
             "instruction": feature["properties"]["instruction"],
+            "affected_zones": feature["properties"]["affectedZones"]
 
         }
         out_list.append(parsed_features)
