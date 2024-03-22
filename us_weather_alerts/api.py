@@ -12,6 +12,7 @@ import os
 #TODO: make asynchronous
 from datetime import datetime, timezone
 from typing import List, Dict
+from google.cloud import storage
 
 
 def scrape_alerts(status: str, start_datetime: datetime, end_datetime: datetime = datetime.now(), limit: int = 500) -> List[Dict]:
@@ -77,8 +78,7 @@ def parse_features(features: List[Dict]) -> pd.DataFrame:
             "sender_name": feature["properties"]["senderName"],
             "headline": feature["properties"]["headline"],
             "description": feature["properties"]["description"],
-            "instruction": feature["properties"]["instruction"],
-            "affected_zones": feature["properties"]["affectedZones"]
+            "instruction": feature["properties"]["instruction"]
 
         }
         out_list.append(parsed_features)
@@ -105,6 +105,27 @@ def upload_to_gcp(dataframe: pd.DataFrame, project_id: str, table_id, keyfile_pa
     credentials = service_account.Credentials.from_service_account_file(keyfile_path)
 
     pandas_gbq.to_gbq(dataframe, table_id, project_id=project_id, if_exists="append", credentials=credentials)
+
+
+def upload_to_gcs_from_memory(dataframe: pd.DataFrame):
+
+    date_today = datetime.now()
+    year = date_today.strftime("%Y")
+    month = date_today.strftime("%m")
+    day = date_today.strftime("%d")
+
+    blob_path = f"us_weather/alerts/{year}/{month}/{day}/{file_name}"
+
+    storage_client = storage.Client()
+
+    bucket_name = os.environ["US_WEATHER_BUCKET_ALERTS"]
+    bucket = storage_client.bucket(bucket_name)
+
+    blob = bucket.blob(blob_path)
+    blob.upload_from_string(dataframe)
+
+    print(f"{blob_path} uploaded to {bucket_name}.")
+
 
 if __name__ == "__main__":
     # API request parameters
