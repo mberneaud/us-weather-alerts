@@ -1,0 +1,19 @@
+[
+{"name": "alert_id", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "area_description", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "geocode", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "type", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "sent", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "effective", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "expires", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "status", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "category", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "severity", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "certainty", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "urgency", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "event", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "sender_name", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "headline", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "description", "field_type": "STRING", "mode": "NULLABLE"},
+{"name": "instruction", "field_type": "STRING", "mode": "NULLABLE"}
+]
