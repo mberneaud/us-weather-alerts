@@ -2,17 +2,21 @@
 name = "us-weather-alerts"
 version = "0.1.0"
 description = "Le Wagon Data Engineering bootcamp final project"
-authors = ["Malte Berneaud <malte.berneaud@gmail.com>"]
+authors = ["Malte Berneaud <malte.berneaud@gmail.com>", "Janine Windhoff <janine.windhoff@gmail.com>", "Mouad Rabih Senhaji <mouadrs2846@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.8.14"
+python = "^3.8.12"
 apache-airflow = "^2.4.0"
 psycopg2-binary = "^2.9.3"
 pandas = "^1.4.2"
 apache-airflow-providers-postgres = "4.1.0"
 dbt-core = "^1.1.1"
 dbt-bigquery = "^1.1.0"
+requests = "^2.31.0"
+pandas-gbq = "^0.22.0"
+google-auth = "^2.29.0"
+
 
 [tool.poetry.dev-dependencies]
 pendulum = "^2.1.2"
