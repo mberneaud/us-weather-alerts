@@ -168,10 +168,4 @@ dbt_us_weather/target/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
-<<<<<<< HEAD
 /logs/scheduler
-=======
-
-# Service account key file
-us_weather_alerts/*.json
->>>>>>> main
