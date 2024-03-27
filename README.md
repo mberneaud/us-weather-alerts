@@ -13,9 +13,26 @@ Screenshot from Slack
 # Architecture sketch
 ![architecture sketch](architecture_sketch.png)
 
+# Local env Airflow and DBT conf :
+
+### Prerequisites :
+
+Add the gcp keys to your VM  (In the same location as the one your VM uses for the bootcamp) and name it as us_weather_alerts.json
+the path should be like the following
+```
+.gcp_keys/us_weather_alerts.json
+```
+
+Once the project is cloned in your local machine.
+
+```
+docker compose up --build
+```
+
 # Useful Links
 ## US National Weather Service API
 * [US National Weather Service API page](https://www.weather.gov/documentation/services-web-api#/)
+* [National Weather Service API Python package](https://nwsapy.readthedocs.io/en/latest/index.html)
 * [US National Weather Service Glossary](https://forecast.weather.gov/glossary.php?letter=u)
 
 ## Pandas-GBQ Package
