@@ -16,7 +16,7 @@ from google.cloud import storage
 
 
 
-def scrape_alerts(status: str, start_datetime: datetime, end_datetime: datetime = datetime.now(), limit: int = 500) -> List[Dict]:
+def scrape_alerts(status: str, region_type: str, start_datetime: datetime, end_datetime: datetime = datetime.now(), limit: int = 500) -> List[Dict]:
     """Scrapes alerts for the specified timeframe and status and returns a list of dictionaries, where each dictionary represents
     an alert (called Feature in the API response)
 
@@ -31,7 +31,8 @@ def scrape_alerts(status: str, start_datetime: datetime, end_datetime: datetime 
     params = {"limit": limit,
           "start": start,
           "end": end,
-          "status": status}
+          "status": status,
+          "region_type": region_type}
 
     features = []
 
@@ -65,7 +66,9 @@ def parse_features(features: List[Dict]) -> pd.DataFrame:
         parsed_features = {
             "id": feature["id"],
             "area_description": feature["properties"]["areaDesc"],
-            "geocode": feature["properties"]["geocode"]["UGC"], # Universal Geographic Code, see https://forecast.weather.gov/glossary.php?letter=u
+            "geocode": feature["properties"]["geocode"]["SAME"],
+            # Note sure what SAME stands for, but can be mapped to FIPS
+            # in the zone county correlation file.
             "type": feature["properties"]["messageType"],
             "sent": feature["properties"]["sent"],
             "effective": feature["properties"]["effective"],
@@ -114,12 +117,9 @@ def upload_to_gcs_from_memory(dataframe: pd.DataFrame ,bucket_name : str,key_fil
     # Convert DataFrame to string representation
     contents = dataframe.to_csv(index=False)
 
-    date_today = datetime.now()
-    year = date_today.strftime("%Y")
-    month = date_today.strftime("%m")
-    day = date_today.strftime("%d")
+    timestamp_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-    blob_path = f"us_weather_alerts/{year}_{month}_{day}"
+    blob_path = f"{timestamp_string}.csv"
 
     # Create credentials from service account key file
     credentials = service_account.Credentials.from_service_account_file(key_file_path)
@@ -138,17 +138,17 @@ def upload_to_gcs_from_memory(dataframe: pd.DataFrame ,bucket_name : str,key_fil
 if __name__ == "__main__":
     # API request parameters
     LIMIT = 500
-    start_datetime = datetime(2023, 1, 1, 1, 0, 0, 1)
+    start_datetime = datetime(2024, 1, 1, 1, 0, 0, 1)
 
     # GCP upload parameters
     keyfile_path = os.environ["SERVICE_ACCOUNT_KEYFILE"]
     gcp_project_id = os.environ["GCP_PROJECT_ID"]
-    table_id = f"{os.environ['BRONZE_DATASET']}.alerts"
+    # table_id = f"{os.environ['BRONZE_DATASET']}.alerts"
 
     #GCS upload parameters
     bucket_name = os.environ["US_WEATHER_AlERTS_BUCKET"]
 
-    features = scrape_alerts(status="actual", start_datetime=start_datetime, limit=LIMIT)
+    features = scrape_alerts(status="actual", region_type="land", start_datetime=start_datetime, limit=LIMIT)
     df = parse_features(features)
     #upload_to_gcp(df, gcp_project_id, table_id, keyfile_path)
     upload_to_gcs_from_memory(df, bucket_name , keyfile_path)
