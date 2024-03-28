@@ -1,0 +1,246 @@
+id,area_description,geocode,type,sent,effective,expires,status,category,severity,certainty,urgency,event,sender_name,headline,description,instruction
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d1f099558e227ace1b3bda1c3b4bd9ec55de49b1.001.1,Bourbon; Crawford; Cherokee; Vernon; St. Clair; Barton; Cedar; Jasper; Dade; Newton; Lawrence; McDonald; Barry,"['020011', '020037', '020021', '029217', '029185', '029011', '029039', '029097', '029057', '029145', '029109', '029119', '029009']",Alert,2024-03-28T14:16:00-05:00,2024-03-28T14:16:00-05:00,2024-03-29T07:00:00-05:00,Actual,Met,Moderate,Likely,Expected,Wind Advisory,NWS Springfield MO,Wind Advisory issued March 28 at 2:16PM CDT until March 29 at 7:00PM CDT by NWS Springfield MO,"* WHAT...South winds 20 to 30 mph with gusts up to 50 mph
+expected.
+
+* WHERE...Portions of southeast Kansas and southwest and west
+central Missouri.
+
+* WHEN...From 10 AM to 7 PM CDT Friday.
+
+* IMPACTS...Gusty winds could blow around unsecured objects.
+Tree limbs could be blown down and a few power outages may
+result.
+
+* ADDITIONAL DETAILS...The gusty winds and low humidities will
+result in elevated fire weather conditions.","Use extra caution when driving, especially if operating a high
+profile vehicle. Secure outdoor objects."
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a3fb558c5291bf0f830b89e63086ae478973084c.001.1,Kuskokwim Delta,['002050'],Alert,2024-03-27T04:25:00-08:00,2024-03-27T04:25:00-08:00,2024-03-27T18:00:00-08:00,Actual,Met,Severe,Possible,Future,Winter Storm Watch,NWS Anchorage AK,Winter Storm Watch issued March 27 at 4:25AM AKDT until March 29 at 4:00PM AKDT by NWS Anchorage AK,"* WHAT...Blizzard conditions possible. Total snow accumulations of
+up to 5 inches possible. Winds could gust as high as 40 mph.
+Visibilities reduced to one-quarter mile at times.
+
+* WHERE...Kuskokwim Delta coast.
+
+* WHEN...From Thursday evening through Friday afternoon.
+
+* IMPACTS...Expect difficult travel conditions. Widespread
+blowing snow could significantly reduce visibility.
+
+* ADDITIONAL DETAILS...Conditions expected to be most impactful
+closer to the coast, in places such as Kipnuk, Kongiganak, and
+Mekoryuk.","A winter storm watch means there is a potential for significant
+snow, sleet, or ice accumulations that may impact travel. People
+are encouraged to closely monitor this weather situation.
+Preparation for this potentially dangerous weather event should
+begin now."
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a83ff41385dc904dd2d4de77ff1d8466915ad204.006.1,Gloucester; Camden; Northwestern Burlington; Delaware; Philadelphia; Lower Bucks,"['034015', '034007', '034005', '042045', '042101', '042017']",Update,2024-03-26T16:16:00-04:00,2024-03-26T16:16:00-04:00,2024-03-27T05:30:00-04:00,Actual,Met,Minor,Likely,Expected,Coastal Flood Advisory,NWS Mount Holly NJ,Coastal Flood Advisory issued March 26 at 4:16PM EDT until March 27 at 7:00AM EDT by NWS Mount Holly NJ,"* WHAT...Up to one foot of inundation above ground level in low-
+lying areas near shorelines and tidal waterways.
+
+* WHERE...In New Jersey, Gloucester, Camden and Northwestern
+Burlington. In Pennsylvania, Delaware, Philadelphia and Lower
+Bucks.
+
+* WHEN...Until 7 AM EDT Wednesday.
+
+* IMPACTS...At this level, flooding begins on the most
+vulnerable roads along tidal waterways. Some partial or full
+road closures are possible.
+
+* ADDITIONAL DETAILS...Widespread minor tidal flooding is
+forecast around the times of high tide through early Wednesday
+morning.","If travel is required, allow extra time as some roads may be
+closed. Do not drive around barricades or through water of
+unknown depth. Take the necessary actions to protect flood-prone
+property."
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4f2f5527e036d158733566d0a7e2b7adb79fafdb.001.1,"Rankin, MS",['028121'],Alert,2024-03-25T22:43:00-05:00,2024-03-25T22:43:00-05:00,2024-03-26T01:45:00-05:00,Actual,Met,Severe,Likely,Immediate,Flash Flood Warning,NWS Jackson MS,Flash Flood Warning issued March 25 at 10:43PM CDT until March 26 at 1:45AM CDT by NWS Jackson MS,"FFWJAN
+
+The National Weather Service in Jackson has issued a
+
+* Flash Flood Warning for...
+Rankin County in central Mississippi...
+
+* Until 145 AM CDT.
+
+* At 1043 PM CDT, Doppler radar and automated rain gauges indicated
+thunderstorms producing heavy rain across the warned area. Between
+1 and 2 inches of rain have already fallen in parts of the warned
+area. The expected rainfall rate is 1 to 2 inches per hour.
+Additional rainfall amounts of 1 to 3 inches are possible in the
+warned area. Flash flooding is ongoing or expected to begin
+shortly.
+
+HAZARD...Flash flooding caused by thunderstorms.
+
+SOURCE...Radar and automated gauges.
+
+IMPACT...Flash flooding of small creeks and streams, urban
+areas, highways, streets and underpasses as well as
+other poor drainage and low-lying areas.
+
+* Some locations that will experience flash flooding include...
+Jackson, Pearl, Brandon, Flowood, Richland, Florence, Pelahatchie,
+Puckett, Fannin, Monterey, Johns, Cato, Star, Goshen Springs,
+Piney Woods, Pisgah, Leesburg and Whites.","Turn around, don't drown when encountering flooded roads. Most flood
+deaths occur in vehicles.
+
+Be especially cautious at night when it is harder to recognize the
+dangers of flooding."
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.12a46ac47a62b1c000afd53d67ac679c34edda34.001.1,"Union, AR; Bienville, LA; Caldwell, LA; Claiborne, LA; De Soto, LA; Grant, LA; Jackson, LA; La Salle, LA; Lincoln, LA; Natchitoches, LA; Ouachita, LA; Red River, LA; Sabine, LA; Union, LA; Webster, LA; Winn, LA; Sabine, TX","['005139', '022013', '022021', '022027', '022031', '022043', '022049', '022059', '022061', '022069', '022073', '022081', '022085', '022111', '022119', '022127', '048403']",Alert,2024-03-25T13:48:00-05:00,2024-03-25T13:48:00-05:00,2024-03-25T20:00:00-05:00,Actual,Met,Extreme,Possible,Future,Tornado Watch,NWS Shreveport LA,Tornado Watch issued March 25 at 1:48PM CDT until March 25 at 8:00PM CDT by NWS Shreveport LA,"THE NATIONAL WEATHER SERVICE HAS ISSUED TORNADO WATCH 61 IN
+EFFECT UNTIL 8 PM CDT THIS EVENING FOR THE FOLLOWING AREAS
+
+IN ARKANSAS THIS WATCH INCLUDES 1 COUNTY
+
+IN SOUTH CENTRAL ARKANSAS
+
+UNION
+
+IN LOUISIANA THIS WATCH INCLUDES 15 PARISHES
+
+IN NORTH CENTRAL LOUISIANA
+
+CALDWELL              GRANT                 JACKSON
+LA SALLE              LINCOLN               OUACHITA
+UNION                 WINN
+
+IN NORTHWEST LOUISIANA
+
+BIENVILLE             CLAIBORNE             DE SOTO
+NATCHITOCHES          RED RIVER             SABINE
+WEBSTER
+
+IN TEXAS THIS WATCH INCLUDES 1 COUNTY
+
+IN NORTHEAST TEXAS
+
+SABINE
+
+THIS INCLUDES THE CITIES OF ARCADIA, BERNICE, CLARKS, COLFAX,
+COLUMBIA, COUSHATTA, DRY PRONG, EL DORADO, FARMERVILLE, GIBSLAND,
+GRAYSON, HAYNESVILLE, HEMPHILL, HOMER, JENA, JONESBORO,
+LOGANSPORT, MANSFIELD, MANY, MARTIN, MIDWAY, MINDEN, MONROE,
+MONTGOMERY, NATCHITOCHES, OLLA, PINELAND, PLEASANT HILL,
+RINGGOLD, RUSTON, SPRINGHILL, STONEWALL, WINNFIELD, AND ZWOLLE.",None
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.62a7eff48ea079d3bb1088ff1715beacaebd4537.002.1,Menominee,['026109'],Cancel,2024-03-25T03:58:00-04:00,2024-03-25T03:58:00-04:00,2024-03-25T04:14:09-04:00,Actual,Met,Minor,Observed,Past,Winter Weather Advisory,NWS Marquette MI,The Winter Weather Advisory has been cancelled.,The Winter Weather Advisory has been cancelled and is no longer in effect.,None
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b8f31ac09cf172d01f42b07d985b28401d1347f8.002.1,"Decatur, KS; Norton, KS","['020039', '020137']",Update,2024-03-24T18:20:00-05:00,2024-03-24T18:20:00-05:00,2024-03-24T18:45:00-05:00,Actual,Met,Severe,Observed,Immediate,Severe Thunderstorm Warning,NWS Goodland KS,Severe Thunderstorm Warning issued March 24 at 6:20PM CDT until March 24 at 6:45PM CDT by NWS Goodland KS,"At 620 PM CDT, a severe thunderstorm was located 7 miles southeast of
+Jennings, or 21 miles northeast of Hoxie, moving northeast at 20 mph.
+
+HAZARD...60 mph wind gusts and quarter size hail.
+
+SOURCE...Radar indicated.
+
+IMPACT...Hail damage to vehicles is expected. Expect wind damage to
+roofs, siding, and trees.
+
+Locations impacted include...
+Jennings, Clayton, and New Almelo.","Remain alert for a possible tornado! Tornadoes can develop quickly
+from severe thunderstorms. If you spot a tornado go at once into the
+basement or small central room in a sturdy structure.
+
+For your protection move to an interior room on the lowest floor of a
+building."
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4dda099e80eaa2b8334aabc7902a20d76820118b.001.1,Guam; Rota; Tinian; Saipan,"['066010', '069100', '069120', '069110']",Cancel,2024-03-25T03:54:00+10:00,2024-03-25T03:54:00+10:00,2024-03-25T04:10:03+10:00,Actual,Met,Minor,Observed,Past,High Surf Warning,NWS Tiyan GU,The High Surf Warning has been cancelled.,The High Surf Warning has been cancelled and is no longer in effect.,"Inexperienced swimmers should remain out of the water due to
+dangerous surf conditions.
+
+Swim near a lifeguard. If caught in a rip current, relax and float.
+Don't swim against the current. If able, swim in a direction
+following the shoreline. If unable to escape, face the shore and call
+or wave for help."
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0d82b65f0dcfcbe8df036e5f01b77be6b0903616.003.1,Kent; Inland Sussex; Delaware Beaches,"['010001', '010005']",Update,2024-03-24T04:19:00-04:00,2024-03-24T04:19:00-04:00,2024-03-24T17:30:00-04:00,Actual,Met,Moderate,Possible,Future,Coastal Flood Watch,NWS Mount Holly NJ,Coastal Flood Watch issued March 24 at 4:19AM EDT until March 26 at 2:00PM EDT by NWS Mount Holly NJ,"* WHAT...One to two feet of inundation above ground level
+possible in low-lying areas near shorelines and tidal
+waterways.
+
+* WHERE...Kent, Inland Sussex and Delaware Beaches.
+
+* WHEN...From Monday morning through Tuesday afternoon.
+
+* IMPACTS...At this level, widespread roadway flooding occurs in
+coastal and bayside communities and along inland tidal
+waterways. Many roads become impassable. Some damage to
+vulnerable structures may begin to occur.","If travel is required, allow extra time as some roads may be
+closed. Do not drive around barricades or through water of
+unknown depth. Take the necessary actions to protect flood-prone
+property."
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8a50dd5d19ad1271f1023d5ea98198416c87de42.001.1,Shasta Lake Area / Northern Shasta County; Northern Sacramento Valley; Northeast Foothills/Sacramento Valley,"['006089', '006103', '006007']",Alert,2024-03-23T15:15:00-07:00,2024-03-23T15:15:00-07:00,2024-03-23T16:00:00-07:00,Actual,Met,Moderate,Observed,Expected,Special Weather Statement,NWS Sacramento CA,Special Weather Statement issued March 23 at 3:15PM PDT by NWS Sacramento CA,"At 314 PM PDT, Doppler radar was tracking a strong thunderstorm near
+O'brien, or 8 miles northeast of Shasta Dam, moving northeast at 15
+mph.
+
+HAZARD...Wind gusts up to 40 mph and pea size hail.
+
+SOURCE...Radar indicated.
+
+IMPACT...Gusty winds could knock down tree limbs and blow around
+unsecured objects. Minor hail damage to vegetation is
+possible.
+
+Locations impacted include...
+Redding, Shasta Dam, Shasta Lake, Central Valley Cdp, O'brien,
+Central Valley, and Mountain Gate.","If outdoors, consider seeking shelter inside a building.
+
+Torrential rainfall is also occurring with this storm and may lead to
+localized flooding. Do not drive your vehicle through flooded
+roadways.
+
+Frequent cloud to ground lightning is occurring with this storm.
+Lightning can strike 10 miles away from a thunderstorm. Seek a safe
+shelter inside a building or vehicle."
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.11873dcbaf4e0e9a8cef7a7db3b1134442e191f9.001.1,Lincoln; McDuffie; Columbia; Richmond; Burke; Chesterfield; McCormick; Newberry; Fairfield; Kershaw; Edgefield; Saluda; Lexington; Richland; Lee; Aiken; Sumter; Barnwell; Calhoun; Clarendon; Bamberg; Northern Lancaster; Southern Lancaster; Northwestern Orangeburg; Central Orangeburg; Southeastern Orangeburg,"['013181', '013189', '013073', '013245', '013033', '045025', '045065', '045071', '045039', '045055', '045037', '045081', '045063', '045079', '045061', '045003', '045085', '045011', '045017', '045027', '045009', '045057', '045075']",Alert,2024-03-23T12:48:00-04:00,2024-03-23T12:48:00-04:00,2024-03-23T23:15:00-04:00,Actual,Met,Moderate,Likely,Expected,Lake Wind Advisory,NWS Columbia SC,Lake Wind Advisory issued March 23 at 12:48PM EDT until March 24 at 8:00AM EDT by NWS Columbia SC,"* WHAT...North winds 10 to 20 mph with gusts up to 35 mph expected.
+
+* WHERE...Portions of east central Georgia and central South
+Carolina.
+
+* WHEN...From 8 PM this evening to 8 AM EDT Sunday.
+
+* IMPACTS...Strong winds and rough waves on area lakes will create
+hazardous conditions for small craft.","Boaters on area lakes should use extra caution since strong winds
+and rough waves can overturn small craft."
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6903614768a7ebb7dc6f9a8472c1f3a394250da6.001.1,Maryland Beaches; Eastern Currituck; Virginia Beach; Accomack; Northampton,"['024047', '037053', '051810', '051001', '051131']",Alert,2024-03-23T03:20:00-04:00,2024-03-23T03:20:00-04:00,2024-03-23T19:00:00-04:00,Actual,Met,Minor,Likely,Expected,High Surf Advisory,NWS Wakefield VA,High Surf Advisory issued March 23 at 3:20AM EDT until March 25 at 7:00PM EDT by NWS Wakefield VA,"* WHAT...Large breaking waves of 8 to 11 feet expected in the
+surf zone.
+
+* WHERE...In Maryland, the Maryland Beaches. In North
+Carolina, Eastern Currituck County. In Virginia, Virginia
+Beach, and Accomack and Northampton Counties.
+
+* WHEN...Until 7 PM EDT Monday.
+
+* IMPACTS...Dangerous swimming and surfing conditions and
+localized beach erosion.","Inexperienced swimmers should remain out of the water due to
+dangerous surf conditions."
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.770e99e87e6d7a45de003c30f60797a08f6a3561.003.1,Jackson; Jo Daviess; Stephenson; Carroll,"['019097', '017085', '017177', '017015']",Update,2024-03-22T12:02:00-05:00,2024-03-22T12:02:00-05:00,2024-03-22T13:15:00-05:00,Actual,Met,Severe,Likely,Expected,Winter Storm Warning,NWS Quad Cities IA IL,Winter Storm Warning issued March 22 at 12:02PM CDT until March 22 at 1:00PM CDT by NWS Quad Cities IA IL,"* WHAT...Heavy snow. Additional snow accumulations of up to one
+inch.
+
+* WHERE...In Iowa, Jackson County. In Illinois, Jo Daviess,
+Stephenson and Carroll Counties.
+
+* WHEN...Until 1 PM CDT this afternoon.
+
+* IMPACTS...Plan on slippery road conditions.","If you must travel, keep an extra flashlight, food, and water in
+your vehicle in case of an emergency.
+
+The latest road conditions for the state you are calling from can
+be obtained by calling 5 1 1."
+https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.df18c6c469bc23557bf84f248a535d6c550c8a51.001.1,"Brantley, GA",['013025'],Update,2024-03-21T21:02:00-04:00,2024-03-21T21:02:00-04:00,2024-03-22T08:00:00-04:00,Actual,Met,Severe,Observed,Immediate,Flood Warning,NWS Jacksonville FL,Flood Warning issued March 21 at 9:02PM EDT until March 22 at 8:00AM EDT by NWS Jacksonville FL,"...The Flood Warning continues for the following rivers in Georgia...
+
+Satilla River At Atkinson affecting Brantley County.
+
+Additional information is available at
+https://water.weather.gov/ahps2/forecasts.php?wfo=jax.
+
+The next statement will be issued Friday morning at 800 AM EDT.
+
+* WHAT...Minor flooding is occurring and minor flooding is forecast.
+
+* WHERE...Satilla River at Atkinson.
+
+* WHEN...Until tomorrow morning.
+
+* IMPACTS...At 13.0 feet, Warners Landing, Louis Landing and
+secondary roads around KOA campgrounds begin to flood.
+At 14.0 feet, River Rock Road begins to experience flooding across
+the road.
+
+* ADDITIONAL DETAILS...
+- At 7:45 PM EDT Thursday the stage was 13.1 feet.
+- Forecast...The river is expected to fall below flood stage
+just after midnight tonight and continue falling to 12.3 feet
+Sunday evening.
+- Flood stage is 13.0 feet.
+- http://www.weather.gov/safety/flood",None
