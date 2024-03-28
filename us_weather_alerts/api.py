@@ -114,12 +114,10 @@ def upload_to_gcs_from_memory(dataframe: pd.DataFrame ,bucket_name : str,key_fil
     # Convert DataFrame to string representation
     contents = dataframe.to_csv(index=False)
 
-    date_today = datetime.now()
-    year = date_today.strftime("%Y")
-    month = date_today.strftime("%m")
-    day = date_today.strftime("%d")
+    pattern = "%Y-%m-%d_%H-%M-%S"
+    partial_filename = datetime.now().strftime(pattern)
 
-    blob_path = f"us_weather_alerts/{year}_{month}_{day}"
+    blob_path = f"us_weather_alerts/{partial_filename}"
 
     # Create credentials from service account key file
     credentials = service_account.Credentials.from_service_account_file(key_file_path)
