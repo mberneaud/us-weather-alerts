@@ -117,7 +117,7 @@ def upload_to_gcs_from_memory(dataframe: pd.DataFrame ,bucket_name : str,key_fil
     # Convert DataFrame to string representation
     contents = dataframe.to_csv(index=False)
 
-    timestamp_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    timestamp_string = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
 
     blob_path = f"{timestamp_string}.csv"
 
