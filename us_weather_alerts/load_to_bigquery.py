@@ -30,7 +30,7 @@ def gcs_recent_file(key_file_path, bucket_name):
         if timestamp > most_recent_timestamp:
             most_recent_timestamp = timestamp
             most_recent_file = blob.name
-    print("Most recent file name :  {most_recent_file}")
+    print(f"Most recent file name :  {most_recent_file}")
     return most_recent_file
 
 
@@ -69,6 +69,9 @@ def load_to_bigquery(bucket_name , table_id,  most_recent_file ,keyfile_path):
  destination_table = client.get_table(table_id)
  print("Loaded {} rows.".format(destination_table.num_rows))
 
+def transfer_recent_file_to_bigquery(bucket_name,table_id,keyfile_path):
+    most_recent_file = gcs_recent_file(keyfile_path, bucket_name)
+    load_to_bigquery(bucket_name,table_id,most_recent_file ,keyfile_path)
 
 
 if __name__ == "__main__":
@@ -82,5 +85,4 @@ if __name__ == "__main__":
     #Bigquery
     table_id = f"{os.environ['BRONZE_DATASET']}.alerts"
 
-    most_recent_file = gcs_recent_file(keyfile_path, bucket_name)
-    load_to_bigquery(bucket_name,table_id,most_recent_file ,keyfile_path)
+    transfer_recent_file_to_bigquery(bucket_name,table_id,keyfile_path)
