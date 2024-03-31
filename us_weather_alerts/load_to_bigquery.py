@@ -30,16 +30,15 @@ def gcs_recent_file(key_file_path, bucket_name):
         if timestamp > most_recent_timestamp:
             most_recent_timestamp = timestamp
             most_recent_file = blob.name
+    print("Most recent file name :  {most_recent_file}")
     return most_recent_file
 
 
-def load_to_bigquery(bucket_name , most_recent_file ,keyfile_path):
+def load_to_bigquery(bucket_name , table_id,  most_recent_file ,keyfile_path):
 
  credentials = service_account.Credentials.from_service_account_file(keyfile_path)
 
  client = bigquery.Client(credentials=credentials)
-
- table_id = f"{os.environ['BRONZE_DATASET']}.alerts"
 
  # Read schema from JSON file
  with open(f"{CURRENT_DIR}/schemas/alerts.json") as f:
@@ -83,7 +82,5 @@ if __name__ == "__main__":
     #Bigquery
     table_id = f"{os.environ['BRONZE_DATASET']}.alerts"
 
-
     most_recent_file = gcs_recent_file(keyfile_path, bucket_name)
-
-    load_to_bigquery(bucket_name, most_recent_file ,keyfile_path)
+    load_to_bigquery(bucket_name,table_id,most_recent_file ,keyfile_path)
