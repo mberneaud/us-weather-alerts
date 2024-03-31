@@ -9,8 +9,6 @@ CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def gcs_recent_file(key_file_path, bucket_name):
 
-    folder_path = "us_weather_alerts"
-
     # Create credentials from service account key file
     credentials = service_account.Credentials.from_service_account_file(key_file_path)
 
@@ -19,30 +17,29 @@ def gcs_recent_file(key_file_path, bucket_name):
 
     # List objects in the specified folder in the bucket
     bucket = storage_client.get_bucket(bucket_name)
-    blobs = bucket.list_blobs(prefix=folder_path)
+    blobs = bucket.list_blobs(prefix="")
 
     most_recent_file = None
     most_recent_timestamp = datetime.min
 
     for blob in blobs:
         file_name = os.path.basename(blob.name)
-        timestamp = datetime.strptime(file_name, "%Y-%m-%d_%H-%M-%S")
+        file_name_timestamp =file_name[:-4]
+        timestamp = datetime.strptime(file_name_timestamp , "%Y-%m-%d_%H-%M-%S")
 
         if timestamp > most_recent_timestamp:
-            print(most_recent_timestamp)
             most_recent_timestamp = timestamp
             most_recent_file = blob.name
-
     return most_recent_file
 
 
-def load_to_bigquery(bucket_name , most_recent_file , gcp_project_id ,keyfile_path):
+def load_to_bigquery(bucket_name , most_recent_file ,keyfile_path):
 
  credentials = service_account.Credentials.from_service_account_file(keyfile_path)
 
  client = bigquery.Client(credentials=credentials)
 
- table_id = f"{gcp_project_id}.{os.environ['BRONZE_DATASET']}.alerts"
+ table_id = f"{os.environ['BRONZE_DATASET']}.alerts"
 
  # Read schema from JSON file
  with open(f"{CURRENT_DIR}/schemas/alerts.json") as f:
@@ -51,14 +48,16 @@ def load_to_bigquery(bucket_name , most_recent_file , gcp_project_id ,keyfile_pa
  # Define BigQuery table schema
  schema = []
  for field in schema_json:
-    schema.append(bigquery.SchemaField(field['name'], field['type'],field['mode']))
+    schema.append(bigquery.SchemaField(field['name'], field['type']))
 
  job_config = bigquery.LoadJobConfig(
     schema=schema,
     skip_leading_rows=1,
+    field_delimiter=",",
+    #allows newline characters within quoted fields to be correctly interpreted.
+    allow_quoted_newlines = True ,
     # The source format defaults to CSV, so the line below is optional.
-    source_format=bigquery.SourceFormat.CSV
- )
+    source_format=bigquery.SourceFormat.CSV )
 
  uri = f"gs://{bucket_name}/{most_recent_file}"
 
@@ -72,6 +71,7 @@ def load_to_bigquery(bucket_name , most_recent_file , gcp_project_id ,keyfile_pa
  print("Loaded {} rows.".format(destination_table.num_rows))
 
 
+
 if __name__ == "__main__":
 
     # GCP upload parameters
@@ -83,8 +83,7 @@ if __name__ == "__main__":
     #Bigquery
     table_id = f"{os.environ['BRONZE_DATASET']}.alerts"
 
-    gcp_project_id = os.environ["GCP_PROJECT_ID"]
 
     most_recent_file = gcs_recent_file(keyfile_path, bucket_name)
 
-    load_to_bigquery(bucket_name, most_recent_file ,gcp_project_id ,keyfile_path)
+    load_to_bigquery(bucket_name, most_recent_file ,keyfile_path)
