@@ -1,3 +1,4 @@
+'''
 import os
 from airflow import DAG
 import pendulum
@@ -57,3 +58,4 @@ with DAG('load_alerts_data_bronze_dataset',
     )
 
 fetch_and_push_alerts_to_gcs >> load_most_recent_file_from_gcs_to_bigquery
+'''
