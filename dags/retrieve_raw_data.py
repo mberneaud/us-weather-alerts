@@ -1,7 +1,8 @@
 import os
 from airflow import DAG
 import pendulum
-from airflow.operators.bash import BashOperator
+from airflow.operators.bash import PythonOperator
+
 from datetime import datetime, timezone
 from us_weather_alerts import api, load_to_bigquery
 
@@ -32,3 +33,27 @@ def load_most_recent_file_from_gcs_to_bigquery():
     load_to_bigquery.transfer_recent_file_to_bigquery(
         bucket_name, table_id, keyfile_path
     )
+
+
+
+default_args = {
+    'depends_on_past': True,
+    'start_date': pendulum.today("UTC").add(days=-1)
+}
+
+with DAG('example_python_operator_dag',
+         default_args=default_args,
+         catchup=False,
+         schedule_interval="@hourly") as dag:
+
+    fetch_and_push_alerts_to_gcs = PythonOperator(
+        task_id='fetch_and_push_alerts_to_gcs',
+        python_callable=fetch_and_push_alerts_to_gcs
+    )
+
+    load_most_recent_file_from_gcs_to_bigquery = PythonOperator(
+        task_id='load_most_recent_file_from_gcs_to_bigquery',
+        python_callable=load_most_recent_file_from_gcs_to_bigquery
+    )
+
+fetch_and_push_alerts_to_gcs >> load_most_recent_file_from_gcs_to_bigquery
