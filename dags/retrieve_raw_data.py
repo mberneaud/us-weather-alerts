@@ -41,7 +41,7 @@ default_args = {
     'start_date': pendulum.today("UTC").add(days=-1)
 }
 
-with DAG('example_python_operator_dag',
+with DAG('load_alerts_data_bronze_dataset',
          default_args=default_args,
          catchup=False,
          schedule_interval="@hourly") as dag:
