@@ -5,12 +5,9 @@ from airflow.operators.python_operator import PythonOperator
 from datetime import datetime
 from us_weather_alerts import api , load_to_bigquery
 
-keyfile_path = os.getenv("SERVICE_ACCOUNT_KEYFILE")
-gcp_project_id = os.getenv("GCP_PROJECT_ID")
-table_id = f"{os.getenv('BRONZE_DATASET')}.test_alerts"
-bucket_name = os.getenv("US_WEATHER_AlERTS_BUCKET")
-DBT_DIR = os.getenv("DBT_DIR")
-
+KEYFILE_PATH = os.getenv("SERVICE_ACCOUNT_KEYFILE")
+ALERTS_BRONZE_TABLE_ID = f"{os.getenv('BRONZE_DATASET')}.alerts"
+BUCKET_NAME = os.getenv("US_WEATHER_AlERTS_BUCKET")
 
 def fetch_and_push_alerts_to_gcs():
     """
@@ -23,7 +20,7 @@ def fetch_and_push_alerts_to_gcs():
         status="actual", region_type="land", start_datetime=start_datetime, limit=LIMIT
     )
     df = api.parse_features(features)
-    api.upload_to_gcs_from_memory(df, bucket_name, keyfile_path)
+    api.upload_to_gcs_from_memory(df, BUCKET_NAME, KEYFILE_PATH)
 
 
 
@@ -32,10 +29,8 @@ def load_most_recent_file_from_gcs_to_bigquery():
     Loads the most recent file from Google Cloud Storage (GCS) to BigQuery alerts table.
     """
     load_to_bigquery.transfer_recent_file_to_bigquery(
-        bucket_name, table_id, keyfile_path
+        BUCKET_NAME, ALERTS_BRONZE_TABLE_ID, KEYFILE_PATH
     )
-
-
 
 default_args = {
     'depends_on_past': True,

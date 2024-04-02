@@ -13,7 +13,6 @@ ENV DBT_PROFILES_DIR=$DBT_DIR
 ENV DBT_VERSION=1.1.1
 #GCP
 ENV SERVICE_ACCOUNT_KEYFILE=$AIRFLOW_HOME/.gcp_keys/us-weather-alert.json
-ENV GCP_PROJECT_ID="le-wagon-328012"
 ENV BRONZE_DATASET="us_weather_alerts_bronze"
 ENV SILVER_DATASET="us_weather_alerts_silver"
 ENV GOLD_DATASET="us_weather_alerts_gold"
