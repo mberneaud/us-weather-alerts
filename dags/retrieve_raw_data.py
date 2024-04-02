@@ -33,7 +33,7 @@ def load_most_recent_file_from_gcs_to_bigquery():
     )
 
 default_args = {
-    'depends_on_past': True,
+    'depends_on_past': False,
     'start_date': pendulum.today("UTC").add(days=-1)
 }
 
