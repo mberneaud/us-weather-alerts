@@ -1,16 +1,15 @@
-'''
 import os
 from airflow import DAG
 import pendulum
-from airflow.operators.bash import PythonOperator
+from airflow.operators.python_operator import PythonOperator
+from datetime import datetime
+from us_weather_alerts import api , load_to_bigquery
 
-from datetime import datetime, timezone
-from us_weather_alerts import api, load_to_bigquery
-
-keyfile_path = os.environ["SERVICE_ACCOUNT_KEYFILE"]
-gcp_project_id = os.environ["GCP_PROJECT_ID"]
-table_id = f"{os.environ['BRONZE_DATASET']}.alerts"
-bucket_name = os.environ["US_WEATHER_AlERTS_BUCKET"]
+keyfile_path = os.getenv("SERVICE_ACCOUNT_KEYFILE")
+gcp_project_id = os.getenv("GCP_PROJECT_ID")
+table_id = f"{os.getenv('BRONZE_DATASET')}.test_alerts"
+bucket_name = os.getenv("US_WEATHER_AlERTS_BUCKET")
+DBT_DIR = os.getenv("DBT_DIR")
 
 
 def fetch_and_push_alerts_to_gcs():
@@ -25,6 +24,7 @@ def fetch_and_push_alerts_to_gcs():
     )
     df = api.parse_features(features)
     api.upload_to_gcs_from_memory(df, bucket_name, keyfile_path)
+
 
 
 def load_most_recent_file_from_gcs_to_bigquery():
@@ -58,4 +58,3 @@ with DAG('load_alerts_data_bronze_dataset',
     )
 
 fetch_and_push_alerts_to_gcs >> load_most_recent_file_from_gcs_to_bigquery
-'''
