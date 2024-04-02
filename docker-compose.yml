@@ -26,12 +26,15 @@ services:
             - AIRFLOW__CORE__EXECUTOR=LocalExecutor
             - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:$POSTGRES_PASSWORD@postgres:5432/db
             - AIRFLOW__CORE__LOAD_EXAMPLES=false
+            - PYTHONPATH=/app/airflow/dags/us_weather_alerts
+
         volumes:
             - ./dags:/app/airflow/dags
             - ./data:/app/airflow/data
             - ./logs:/app/airflow/logs
             - ~/.gcp_keys:/app/airflow/.gcp_keys
             - ./dbt_us_weather:/app/airflow/dbt_us_weather
+            - ./us_weather_alerts:/app/airflow/dags/us_weather_alerts
     webserver:
         build: .
         command: poetry run scripts/entrypoint.sh

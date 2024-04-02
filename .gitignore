@@ -160,6 +160,7 @@ database
 dbt_us_weather/logs/
 dbt_us_weather/target/
 /logs
+/dags/us_weather_alerts/
 
 
 # PyCharm
