@@ -1,17 +1,4 @@
-with alerts as (
-
-    select * from {{ ref('alerts') }}
-
-),
-
-final as (
-
-    select
-      alert_id,
-      fips_id
-
-    from alerts
-
-)
-
-select * from final
+select
+    id as alert_id,
+    unnest(fips) as fips_id
+from {{ source('us_weather_alerts_bronze', 'alerts') }}
