@@ -1,4 +1,4 @@
-select
-    id as alert_id,
-    unnest(right(fips, 5)) as fips_id
-from {{ source('us_weather_alerts_bronze', 'alerts') }}
+SELECT
+    id AS alert_id,
+    UNNEST(RIGHT(same, 5)) AS fips_id
+FROM {{ source('us_weather_alerts_bronze', 'alerts') }}
