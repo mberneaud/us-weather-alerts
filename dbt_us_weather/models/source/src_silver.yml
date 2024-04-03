@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: us_weather_alerts_silver
+    project: le-wagon-328012
+    tables:
+      - name: alerts
+      - name: zone_county
+      - name: alert_fips
