@@ -68,11 +68,11 @@ def parse_features(features: List[Dict]) -> pd.DataFrame:
             "same": feature["properties"]["geocode"]["SAME"],
             # Note sure what SAME stands for, but can be mapped to FIPS
             # in the zone county correlation file.
-            "type": feature["properties"]["messageType"],
-            "sent": feature["properties"]["sent"],
             "onset": feature["properties"]["onset"],
             "ends": feature["properties"]["ends"],
             "response":feature["properties"]["response"],
+            "type":feature["properties"]["messageType"],
+            "sent": feature["properties"]["sent"],
             "effective": feature["properties"]["effective"],
             "expires": feature["properties"]["expires"],
             "status": feature["properties"]["status"],
@@ -84,8 +84,10 @@ def parse_features(features: List[Dict]) -> pd.DataFrame:
             "headline": feature["properties"]["headline"],
             "description": feature["properties"]["description"],
             "instruction": feature["properties"]["instruction"]
-
         }
+
+
+
         out_list.append(parsed_features)
 
     # converting list of dicts to dataframe and returning
