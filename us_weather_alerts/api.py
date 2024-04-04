@@ -65,12 +65,14 @@ def parse_features(features: List[Dict]) -> pd.DataFrame:
     for feature in features:
         parsed_features = {
             "id": feature["id"],
-            "area_description": feature["properties"]["areaDesc"],
-            "geocode": feature["properties"]["geocode"]["SAME"],
+            "same": feature["properties"]["geocode"]["SAME"],
             # Note sure what SAME stands for, but can be mapped to FIPS
             # in the zone county correlation file.
             "type": feature["properties"]["messageType"],
             "sent": feature["properties"]["sent"],
+            "onset": feature["properties"]["onset"],
+            "ends": feature["properties"]["ends"],
+            "response":feature["properties"]["response"],
             "effective": feature["properties"]["effective"],
             "expires": feature["properties"]["expires"],
             "status": feature["properties"]["status"],
@@ -79,7 +81,6 @@ def parse_features(features: List[Dict]) -> pd.DataFrame:
             "certainty": feature["properties"]["certainty"],
             "urgency": feature["properties"]["urgency"],
             "event": feature["properties"]["event"],
-            "sender_name": feature["properties"]["senderName"],
             "headline": feature["properties"]["headline"],
             "description": feature["properties"]["description"],
             "instruction": feature["properties"]["instruction"]
