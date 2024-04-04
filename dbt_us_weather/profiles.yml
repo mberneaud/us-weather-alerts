@@ -15,7 +15,7 @@ dbt_us_weather:
       dataset: us_weather_alerts_silver
       job_execution_timeout_seconds: 300
       job_retries: 1
-      keyfile: ../secrets/le-wagon-328012-e2c814471360.json
+      keyfile: /app/airflow/.gcp_keys/us_weather_alerts.json
       location: EU
       method: service-account
       priority: interactive
@@ -26,7 +26,7 @@ dbt_us_weather:
       dataset: us_weather_alerts_gold
       job_execution_timeout_seconds: 300
       job_retries: 1
-      keyfile: ../secrets/le-wagon-328012-e2c814471360.json
+      keyfile: /app/airflow/.gcp_keys/us_weather_alerts.json
       location: EU
       method: service-account
       priority: interactive
