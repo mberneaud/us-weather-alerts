@@ -22,16 +22,4 @@ with DAG(
         task_id="dbt_run_silver_model",
         bash_command= f"cd /app/airflow && poetry install --no-root &&  poetry run dbt run --project-dir {DBT_DIR} --models silver --target silver",
     )
-
-'''
-    dbt_run_operator = DbtRunOperator(
-    task_id='dbt_run_silver_model',
-    dir=DBT_DIR,  # Path to your dbt project directory
-    profiles_dir=None,  # Path to your dbt profiles directory, if needed
-    profiles=None,  # Profile name from profiles.yml to use, if needed
-    target='silver',  # Target name to use, if needed
-    select='silver',  # Name of the selection in your dbt project
-    dag=dag,
-)
-'''
 dbt_run_silver_model
