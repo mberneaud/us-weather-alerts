@@ -2,13 +2,10 @@ import os
 
 from airflow import DAG
 
-# $IMPORT_BEGIN
-# noreorder
+
 import pendulum
 
 from airflow.operators.bash import BashOperator
-
-# $IMPORT_END
 
 
 DBT_DIR = os.getenv("DBT_DIR")
@@ -16,24 +13,25 @@ DBT_DIR = os.getenv("DBT_DIR")
 
 with DAG(
     "dbt_basics",
-    # $CODE_BEGIN
-    default_args={ "depends_on_past": True, },
+    default_args={ "depends_on_past": False, },
     start_date=pendulum.today("UTC").add(days=-1),
     schedule_interval="@daily",
     catchup=False,
-    # $CODE_END
 ) as dag:
-    # $CHA_BEGIN
-    dbt_run = BashOperator(
-        task_id="dbt_run",
-        bash_command=f"dbt run --project-dir {DBT_DIR}",
+    dbt_run_silver_model = BashOperator(
+        task_id="dbt_run_silver_model",
+        bash_command= f"cd /app/airflow && poetry install --no-root &&  poetry run dbt run --project-dir {DBT_DIR} --models silver --target silver",
     )
 
-    dbt_test = BashOperator(
-        task_id="dbt_test",
-        bash_command=f"dbt test --project-dir {DBT_DIR}",
-    )
-
-    dbt_run >> dbt_test
-    # $CHA_END
-
+'''
+    dbt_run_operator = DbtRunOperator(
+    task_id='dbt_run_silver_model',
+    dir=DBT_DIR,  # Path to your dbt project directory
+    profiles_dir=None,  # Path to your dbt profiles directory, if needed
+    profiles=None,  # Profile name from profiles.yml to use, if needed
+    target='silver',  # Target name to use, if needed
+    select='silver',  # Name of the selection in your dbt project
+    dag=dag,
+)
+'''
+dbt_run_silver_model
