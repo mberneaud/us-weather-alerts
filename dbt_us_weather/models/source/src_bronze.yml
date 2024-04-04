@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: us_weather_alerts_bronze
+    project: le-wagon-328012
+    tables:
+      - name: alerts
+      - name: zone_county
