@@ -6,7 +6,7 @@ SELECT
   PARSE_TIMESTAMP('%FT%T%Ez', effective) AS information_start,
   PARSE_TIMESTAMP('%FT%T%Ez', expires) AS information_end,
   status AS alert_status,
-  messageType AS alert_message_type,
+  type AS alert_message_type,
   severity AS alert_severity,
   certainty AS alert_certainty,
   urgency AS alert_urgency,
