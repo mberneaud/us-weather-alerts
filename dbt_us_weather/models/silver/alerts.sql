@@ -1,10 +1,11 @@
-SELECT
+SELECT DISTINCT
   id AS alert_id,
   event,
-  PARSE_TIMESTAMP('%FT%T%Ez', onset) AS event_start,
-  PARSE_TIMESTAMP('%FT%T%Ez', ends) AS event_end,
-  PARSE_TIMESTAMP('%FT%T%Ez', effective) AS information_start,
-  PARSE_TIMESTAMP('%FT%T%Ez', expires) AS information_end,
+  CASE WHEN onset <> 'None' THEN PARSE_TIMESTAMP('%FT%T%Ez', onset) ELSE NULL END AS event_start,
+  CASE WHEN ends <> 'None' THEN PARSE_TIMESTAMP('%FT%T%Ez', ends) ELSE NULL END AS event_end,
+  CASE WHEN effective <> 'None' THEN PARSE_TIMESTAMP('%FT%T%Ez', effective) ELSE NULL END AS information_start,
+  CASE WHEN expires <> 'None' THEN PARSE_TIMESTAMP('%FT%T%Ez', expires) ELSE NULL END AS information_end,
+  CASE WHEN sent <> 'None' THEN PARSE_TIMESTAMP('%FT%T%Ez', sent) ELSE NULL END AS information_sent,
   status AS alert_status,
   type AS alert_message_type,
   severity AS alert_severity,
