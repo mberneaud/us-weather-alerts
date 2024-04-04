@@ -1,0 +1,19 @@
+[
+{"name": "id", "type": "STRING"},
+{"name": "area_description", "type": "STRING"},
+{"name": "geocode", "type": "STRING"},
+{"name": "type", "type": "STRING"},
+{"name": "sent", "type": "STRING"},
+{"name": "effective", "type": "STRING"},
+{"name": "expires", "type": "STRING"},
+{"name": "status", "type": "STRING"},
+{"name": "category", "type": "STRING"},
+{"name": "severity", "type": "STRING"},
+{"name": "certainty", "type": "STRING"},
+{"name": "urgency", "type": "STRING"},
+{"name": "event", "type": "STRING"},
+{"name": "sender_name", "type": "STRING"},
+{"name": "headline", "type": "STRING"},
+{"name": "description", "type": "STRING"},
+{"name": "instruction", "type": "STRING"}
+]
