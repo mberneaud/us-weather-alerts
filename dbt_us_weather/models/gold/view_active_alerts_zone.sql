@@ -19,4 +19,4 @@ SELECT
   recommended_action_type AS RecommendedAction,
   recommended_action_description AS RecommendedActionDescription
 
-FROM {{ ref('alerts_zone') }}
+FROM {{ ref('active_alerts_zone') }}
