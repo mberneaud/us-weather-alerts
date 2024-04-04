@@ -1,0 +1,30 @@
+
+version: 2
+
+models:
+  - name: alerts
+    description: "tbd"
+    columns:
+      - name: tbd
+        description: "tbd"
+        tests:
+          - unique
+          - not_null
+
+  - name: alert_fips
+    description: "tbd"
+    columns:
+      - name: tbd
+        description: "tbd"
+        tests:
+          - unique
+          - not_null
+
+  - name: zone_county
+    description: "tbd"
+    columns:
+      - name: tbd
+        description: "tbd"
+        tests:
+          - unique
+          - not_null
