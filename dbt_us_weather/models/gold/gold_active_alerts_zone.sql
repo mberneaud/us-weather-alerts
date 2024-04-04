@@ -15,7 +15,7 @@ SELECT
 
 FROM {{ ref('silver_alerts') }} a
 LEFT JOIN {{ ref('silver_alert_fips') }} af ON a.alert_id = af.alert_id
-LEFT JOIN {{ ref('silver_zone_county') }} zc ON af.fips_id = zc.fips_id
+JOIN {{ ref('silver_zone_county') }} zc ON af.fips_id = zc.fips_id
 WHERE a.event_start <= CURRENT_TIMESTAMP()
   AND (a.event_end >= CURRENT_TIMESTAMP() OR a.event_end IS NULL)
   AND a.alert_status = 'Actual'
