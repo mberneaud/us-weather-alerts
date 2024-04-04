@@ -13,9 +13,9 @@ SELECT
   a.recommended_action_type,
   a.recommended_action_description
 
-FROM {{ source('us_weather_alerts_silver', 'alerts') }} a
-LEFT JOIN {{ source('us_weather_alerts_silver', 'alert_fips') }} af ON a.alert_id = af.alert_id
-LEFT JOIN {{ source('us_weather_alerts_silver', 'zone_county') }} zc ON af.fips_id = zc.fips_id
+FROM {{ ref('alerts') }} a
+LEFT JOIN {{ ref('alert_fips') }} af ON a.alert_id = af.alert_id
+LEFT JOIN {{ ref('zone_county') }} zc ON af.fips_id = zc.fips_id
 WHERE a.event_start <= CURRENT_TIMESTAMP()
   AND (a.event_end >= CURRENT_TIMESTAMP() OR a.event_end IS NULL)
   AND a.alert_status = 'Actual'
