@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
     af.alert_id,
     RIGHT(REPLACE(f, '"', ''),5) AS fips_id
 FROM (
