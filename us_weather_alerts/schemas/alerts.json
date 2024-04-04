@@ -1,6 +1,9 @@
 [
-{"name": "alert_id", "type": "STRING"},
-{"name": "ugc_id", "type": "STRING"},
+{"name": "id", "type": "STRING"},
+{"name": "same", "type": "STRING"},
+{"name": "onset", "type": "STRING"},
+{"name": "ends", "type": "STRING"},
+{"name": "response", "type": "STRING"},
 {"name": "type", "type": "STRING"},
 {"name": "sent", "type": "STRING"},
 {"name": "effective", "type": "STRING"},
