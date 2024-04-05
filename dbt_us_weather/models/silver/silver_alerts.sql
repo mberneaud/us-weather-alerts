@@ -18,4 +18,4 @@ FROM (
            ROW_NUMBER() OVER (PARTITION BY id ORDER BY sent DESC) AS row_num
     FROM {{ source('us_weather_alerts_bronze', 'alerts') }}
 ) AS ranked
-WHERE row_num = 1;
+WHERE row_num = 1
