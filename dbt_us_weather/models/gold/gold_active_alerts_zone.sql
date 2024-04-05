@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
   a.alert_id,
   zc.fips_id,
   zc.state_name_abbr,
