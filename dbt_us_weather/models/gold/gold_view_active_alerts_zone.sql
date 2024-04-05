@@ -9,7 +9,6 @@ SELECT
   fips_id AS FIPS,
   state_name_abbr AS State,
   county_name AS County,
-  zone_name AS Zone,
   event AS Event,
   event_start AS Start,
   event_end AS Ends,
