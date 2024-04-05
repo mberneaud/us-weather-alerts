@@ -1,9 +1,8 @@
-SELECT
+SELECT DISTINCT
   a.alert_id,
   zc.fips_id,
   zc.state_name_abbr,
   zc.county_name,
-  zc.zone_name,
   a.event,
   a.event_start,
   a.event_end,
