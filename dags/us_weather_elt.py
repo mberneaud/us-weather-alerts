@@ -2,12 +2,14 @@ import os
 from airflow import DAG
 import pendulum
 from airflow.operators.python_operator import PythonOperator
+from airflow.operators.bash import BashOperator
 from datetime import datetime
 from us_weather_alerts import api , load_to_bigquery
 
 KEYFILE_PATH = os.getenv("SERVICE_ACCOUNT_KEYFILE")
 ALERTS_BRONZE_TABLE_ID = f"{os.getenv('BRONZE_DATASET')}.alerts"
 BUCKET_NAME = os.getenv("US_WEATHER_AlERTS_BUCKET")
+DBT_DIR = os.getenv("DBT_DIR")
 
 def fetch_and_push_alerts_to_gcs():
     """
@@ -37,7 +39,7 @@ default_args = {
     'start_date': pendulum.today("UTC").add(days=-1)
 }
 
-with DAG('load_alerts_data_bronze_dataset',
+with DAG('us_weather_elt',
          default_args=default_args,
          catchup=False,
          schedule_interval="@hourly") as dag:
@@ -52,4 +54,14 @@ with DAG('load_alerts_data_bronze_dataset',
         python_callable=load_most_recent_file_from_gcs_to_bigquery
     )
 
-fetch_and_push_alerts_to_gcs >> load_most_recent_file_from_gcs_to_bigquery
+    dbt_run_silver_model = BashOperator(
+        task_id="dbt_run_silver_model",
+        bash_command= f"cd /app/airflow && poetry install --no-root &&  poetry run dbt run --project-dir {DBT_DIR} --models silver --target silver",
+    )
+
+    dbt_run_gold_model = BashOperator(
+        task_id="dbt_run_gold_model",
+        bash_command= f"cd /app/airflow && poetry install --no-root &&  poetry run dbt run --project-dir {DBT_DIR} --models gold --target gold",
+    )
+
+fetch_and_push_alerts_to_gcs >> load_most_recent_file_from_gcs_to_bigquery >> dbt_run_silver_model >> dbt_run_gold_model

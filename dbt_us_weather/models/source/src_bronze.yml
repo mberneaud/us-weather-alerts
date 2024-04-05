@@ -6,3 +6,10 @@ sources:
     tables:
       - name: alerts
       - name: zone_county
+
+  - name: us_weather_alerts_silver
+    project: le-wagon-328012
+    tables:
+      - name: silver_alerts
+      - name: silver_alert_fips
+      - name: silver_zone_county
