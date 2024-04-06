@@ -17,4 +17,5 @@ LEFT JOIN {{ source('us_weather_alerts_silver', 'silver_alert_fips') }} af ON a.
 JOIN {{ source('us_weather_alerts_silver', 'silver_zone_county') }} zc ON af.fips_id = zc.fips_id
 WHERE a.event_start <= CURRENT_TIMESTAMP()
   AND (a.event_end >= CURRENT_TIMESTAMP() OR a.event_end IS NULL)
+  AND a.information_end >= CURRENT_TIMESTAMP()
   AND a.alert_status = 'Actual'
